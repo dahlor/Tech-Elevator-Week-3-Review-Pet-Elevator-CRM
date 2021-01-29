@@ -3,6 +3,8 @@ package com.techelevator.hr;
 import java.util.Map;
 
 import com.techelevator.Person;
+import com.techelevator.Billable;
+
 
 public class Employee extends Person implements Billable {
 
