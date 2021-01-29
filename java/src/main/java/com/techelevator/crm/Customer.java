@@ -1,11 +1,14 @@
 package com.techelevator.crm;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.techelevator.Billable;
 import com.techelevator.Person;
 
-public class Customer extends Person {
+public class Customer extends Person implements Billable {
 
 		// Variables
 	
@@ -40,7 +43,18 @@ public class Customer extends Person {
 			super(firstName, lastName);
 			phoneNumber = "";
 		}
-
 		
-	
+		// Method (Implementing Billable)
+		
+				
+		public double getBalanceDue(Map<String, Double> servicesRendered) {
+			
+			double totalCost = 0.00;
+			
+			for(Map.Entry<String, Double> loopy : servicesRendered.entrySet()) {
+					totalCost = totalCost + loopy.getValue();
+			}
+			
+			return totalCost;	
+		}
 }
