@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 public class Pet {
 
-	
 	private String name;
 	private String species;
-	ArrayList<String> vaccinations = new ArrayList<String>();
+	private ArrayList<String> vaccinations = new ArrayList<String>();
 	
+	public Pet() {
+		name = "";
+		species = "";
+	}
 	
 	public Pet(String name, String species) {
 		this.name = name;
