@@ -9,6 +9,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 public class EmployeeTests {
+	
+	private Employee testCode = new Employee("String", "String");
 
     @Test
     public void getFullNameReturnsCorrectFormat() {
@@ -34,5 +36,15 @@ public class EmployeeTests {
         employee.raiseSalary(-10); //"raise" by negative 10%
 
         assertEquals("Salary should remain the same when raise percentage is negative.",100, employee.getSalary(),0.0);
+    }
+    
+    @Test
+    public void TestGetBalance() {
+    	Map<String, Double> testServices = new HashMap<String, Double>();
+    	testServices.put("Walking", 50.0);
+    	testServices.put("Grooming", 80.0);
+    	testServices.put("Sitting", 90.0);
+    	
+    	assertEquals(195.0, testCode.getBalanceDue(testServices), .0001);
     }
 }
