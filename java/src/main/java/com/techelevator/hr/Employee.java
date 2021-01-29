@@ -77,12 +77,13 @@ public class Employee extends Person implements Billable {
 		double totalCost = 0.00;
 		
 		for(Map.Entry<String, Double> loopy : servicesRendered.entrySet()) {
-			if (loopy.getKey() == "Walking") {
-				totalCost = totalCost + (loopy.getValue() / 2);	
+			if (loopy.getKey() != "Walking") {
+				totalCost = totalCost + loopy.getValue();	
 			}
-				totalCost = totalCost + loopy.getValue();
+			else if (loopy.getKey() == "Walking") {
+				totalCost = totalCost + (loopy.getValue() * .50);
+			}
 		}
-		
 		return totalCost;	
-	}
+  	}
 }
